@@ -2,17 +2,18 @@ document.prototype.frm = document.querySelector('.form');
 
 function Cancel() 
 {
+    alert("User and Password are incorrect");
     document.frm.username.value="";
     document.frm.password.value="";
     document.getElementById("username").focus();
 }
 
-function checklogin(name, password) 
+function checklogin(username, password) 
 {
     var m_username = "admin123";
     var m_password = "milan12345"
 
-    if(name!="admin123" || password!="milan12345") 
+    if(username != m_username || password != m_password) 
         return false;
     else
         return true;
@@ -27,35 +28,24 @@ function _submit()
     var f=document.frm;
     var username=f.username.value;
     var password=f.password.value;
-    if(f.username.value=="") 
+    var validate = false;
+
+    if(username === "" || password === "") 
     {
         alert("Username and Password cannot be empty");
         f.username.focus();
-        return false;
+        validate = false;
     }
-    if(false == checklogin(f.username.value, f.password.value)) 
+    if(!validate === checklogin(username, password)) 
     {
-        alert("User and Password are incorrect");
-        document.frm.username.value="";
-        document.frm.password.value="";
-        document.getElementById("username").focus();
         Cancel();
     } else {
         Login();
     }
 }
 
-var submit_button = document.getElementsByTagName('button');
-
-if(typeof document.frm === 'object') 
-{
-    if(submit_button.length > 0) 
-    {
-        submit_button = submit_button[0]; 
-        //Submit button click
-        submit_button.addEventListener('click', function() {
-            _submit();
-        });
-    }
-}
+var submit_button = document.getElementsById('#submit-button');
+submit_button.addEventListener('click', function() {
+    _submit();
+});
 
