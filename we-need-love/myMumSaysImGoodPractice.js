@@ -5,13 +5,15 @@ var MenuStyler = (function(){
        * Apply CSS styles to each menu item
        */
       for (let index = 0; index < menuItems.length; index++) {
-        menuItems[i].style.color = 'red';
-        menuItems[i].style.backgroundColor = 'blue';
-        menuItems[i].style.border = '2px solid #000';
-        menuItems[i].style.paddingLeft = '3px';
-        menuItems[i].style.marginTop = '3px';
-        menuItems[i].style.fontSize = '1.2em';
-        menuItems[i].style.fontStyle = 'italic';
+        var cssStyle = menuItems[i].style;
+
+        cssStyle.color = 'red';
+        cssStyle.backgroundColor = 'blue';
+        cssStyle.border = '2px solid #000';
+        cssStyle.paddingLeft = '3px';
+        cssStyle.marginTop = '3px';
+        cssStyle.fontSize = '1.2em';
+        cssStyle.fontStyle = 'italic';
       }
   };
 

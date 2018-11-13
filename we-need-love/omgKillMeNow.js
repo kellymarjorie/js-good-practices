@@ -1,16 +1,15 @@
-function check_to_see_if_the_first_cart_is_full(crt) {
-  let full = false
-  if (crt.size > 100) {
-    full = true
+function checkToSeeIfFirstCartIsFull(cart) {
+  if (cart.size > 100) {
+    return true;
   }
-  return full;
 }
 
-let cart_name_as_string = 'Shopping Cart';
-let the_carts = [{
-  name: cartNameAsString,
+let cartName = 'Shopping Cart';
+let carts = [{
+  name: cartName,
   size: 101
 }];
 
-let the_first_cart = the_carts[0];
-let is_the_cart_full = check_to_see_if_the_first_cart_is_full(the_first_cart);
+let firstCart = carts[0];
+let istheCartFull = checkToSeeIfFirstCartIsFull(firstCart);
+console.log(istheCartFull);
